@@ -73,15 +73,11 @@ def copy():
 
 
 def paste():
-    try:
-        download('copied.txt')
-        copied = read('copied.txt')
-        pyperclip.copy(copied)
-    except:
-        reconnect()
-        download('copied.txt')
-        copied = read('copied.txt')
-        pyperclip.copy(copied)
+    reconnect()
+    download('copied.txt')
+    copied = read('copied.txt')
+    pyperclip.copy(copied)
+
     print(copied)
     print('downloaded')
 
