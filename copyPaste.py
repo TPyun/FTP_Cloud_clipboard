@@ -51,8 +51,9 @@ def read(fileName):
 
 def write(fileName, sentence):
     with open('local' + fileName, 'w', encoding='utf-8') as f:
-        f.write(sentence)
         print(sentence)
+        sentence = sentence.replace("\n", "")
+        f.write(sentence)
 
 
 def upload(fileName):
@@ -81,6 +82,7 @@ def paste():
         download('copied.txt')
         copied = read('copied.txt')
         pyperclip.copy(copied)
+    print(copied)
     print('downloaded')
 
 
