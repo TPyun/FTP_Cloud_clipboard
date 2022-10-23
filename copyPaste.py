@@ -62,13 +62,10 @@ def upload(fileName):
 
 
 def copy():
-    try:
-        write('copied.txt', str(pyperclip.paste()))
-        upload('copied.txt')
-    except:
-        reconnect()
-        write('copied.txt', str(pyperclip.paste()))
-        upload('copied.txt')
+    reconnect()
+    write('copied.txt', str(pyperclip.paste()))
+    upload('copied.txt')
+
     print('uploaded')
 
 
